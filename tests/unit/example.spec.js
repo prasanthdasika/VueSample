@@ -1,13 +1,13 @@
 import { expect } from 'chai'
 import { shallowMount } from '@vue/test-utils'
-import HelloWorld from '@/components/HelloWorld.vue'
+import NewsDisplay from '@/components/learning-resources/NewsDisplay.vue'
 
-describe('HelloWorld.vue', () => {
+describe('NewsDisplay.vue', () => {
   it('renders props.msg when passed', () => {
-    const msg = 'new message'
-    const wrapper = shallowMount(HelloWorld, {
-      props: { msg }
+    const newsItem = { title: 'cnn', description: 'cnn news', url: 'http://cnn.com' }
+    const wrapper = shallowMount(NewsDisplay, {
+      props: { newsItem }
     })
-    expect(wrapper.text()).to.include(msg)
+    expect(wrapper.text()).to.include(newsItem.title)
   })
 })

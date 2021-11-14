@@ -1,6 +1,6 @@
 <template>
 <div >
-  <h3>Vuex State Counter: {{ $store.state.counter }}</h3><button @click="addOne">Increment counter</button>
+  <h3>Vuex State Counter: {{ $store.state.counter }}</h3><button @click="addOne">Get News</button>
   <p >{{  errorText  }}</p>
   <p v-if="isLoading"> Loading...</p>
    <ul>
@@ -21,8 +21,6 @@ export default {
     titleTemplate: 'Global News App'
   },
   mounted () {
-    this.isLoading = true
-    this.LoadData()
   },
   data () {
     return {
@@ -47,7 +45,9 @@ export default {
       }
     },
     addOne () {
+      this.isLoading = true
       this.$store.state.counter++
+      this.LoadData()
     }
   }
 }
