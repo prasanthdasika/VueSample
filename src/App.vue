@@ -1,5 +1,6 @@
 <template>
 <div >
+  <h3>Vuex State Counter: {{ $store.state.counter }}</h3><button @click="addOne">Increment counter</button>
   <p >{{  errorText  }}</p>
   <p v-if="isLoading"> Loading...</p>
    <ul>
@@ -39,6 +40,9 @@ export default {
       } catch (error) {
         this.errorText = error
       }
+    },
+    addOne () {
+      this.$store.state.counter++
     }
   }
 }
