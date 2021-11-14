@@ -1,9 +1,8 @@
-import { createApp } from 'vue'
+import { createApp, defineAsyncComponent } from 'vue'
 import { createStore } from 'vuex'
 import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
-import BaseCard from './components/UI/BaseCard.vue'
 
 const store = createStore({
   state () {
@@ -12,7 +11,7 @@ const store = createStore({
     }
   }
 })
-
+const BaseCard = defineAsyncComponent(() => import('./components/UI/BaseCard.vue'))
 const app = createApp(App)
 app.component('base-card', BaseCard)
 
