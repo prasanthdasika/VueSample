@@ -15,6 +15,11 @@ import axios from 'axios'
 import NewsDisplay from './components/learning-resources/NewsDisplay.vue'
 
 export default {
+  metaInfo: {
+    title: 'Global News app',
+    // all titles will be injected into this template
+    titleTemplate: 'Global News App'
+  },
   mounted () {
     this.isLoading = true
     this.LoadData()

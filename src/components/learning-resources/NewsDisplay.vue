@@ -12,6 +12,11 @@
 <script>
 import BaseCard from '../UI/BaseCard.vue'
 export default {
+  metaInfo: {
+    title: 'Global News app',
+    // all titles will be injected into this template
+    titleTemplate: 'Global News App'
+  },
   components: { BaseCard },
   name: 'news-display',
   props: ['newsItem'],
