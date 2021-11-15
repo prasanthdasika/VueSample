@@ -3,6 +3,7 @@ import { createStore } from 'vuex'
 import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
+import VueMeta from 'vue-meta'
 
 const store = createStore({
   state () {
@@ -13,6 +14,8 @@ const store = createStore({
 })
 const BaseCard = defineAsyncComponent(() => import('./components/UI/BaseCard.vue'))
 const app = createApp(App)
+app.use(VueMeta)
+
 app.component('base-card', BaseCard)
 
 app.use(store).use(router).mount('#app')
